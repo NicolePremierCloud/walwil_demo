@@ -1,4 +1,4 @@
-connection: "demo_shipping"
+connection: "walwil_demo"
 
 # include all the views
 include: "/views/**/*.view.lkml"
@@ -14,5 +14,17 @@ explore: route {}
 
 explore: client_preference {}
 
-explore: cargo {}
 
+explore: cargo {
+  join: route {
+    type: left_outer
+    relationship: many_to_many
+    sql_on: ${cargo.route} = ${route.route_id} ;;
+  }
+
+  join: client_preference {
+    type: left_outer
+    relationship: one_to_many
+    sql_on: ${cargo.client_id} = ${client_preference.client_id} ;;
+  }
+}

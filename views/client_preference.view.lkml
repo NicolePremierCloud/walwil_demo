@@ -1,5 +1,5 @@
 view: client_preference {
-  sql_table_name: `Cargo_shipping.Client_Preference` ;;
+  sql_table_name: `gcp-sandbox-324617.Cargo_shipping.Client_Preference` ;;
 
   dimension: client_id {
     type: string

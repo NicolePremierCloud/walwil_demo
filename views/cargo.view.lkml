@@ -1,5 +1,5 @@
 view: cargo {
-  sql_table_name: `Cargo_shipping.cargo` ;;
+  sql_table_name: `gcp-sandbox-324617.Cargo_shipping.cargo` ;;
 
   dimension: bill_of_lading {
     type: string
