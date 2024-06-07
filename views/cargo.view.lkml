@@ -126,6 +126,7 @@ view: cargo {
   dimension: recommended_route {
     type: string
     sql: ${TABLE}.Recommended_Route ;;
+    drill_fields: [client_preference.preference, client_preference.client_ID]
   }
   dimension: route {
     type: string
@@ -162,6 +163,12 @@ view: cargo {
   dimension: vessel_name {
     type: string
     sql: ${TABLE}.vessel_name ;;
+  }
+
+  dimension: route_id {
+    type: string
+    sql: ${TABLE}.route_id ;;
+    drill_fields: [route]
   }
   dimension: voyage_number {
     type: string

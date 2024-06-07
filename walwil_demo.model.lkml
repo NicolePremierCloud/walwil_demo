@@ -8,15 +8,16 @@ include: "/views/*.view.lkml"                # include all views in the views/ f
 # # and define the joins that connect them together.
 #
 explore: cargo {
-  join: route{
-    type: left_outer
-    relationship: many_to_many
-    sql_on: ${cargo.route}} = ${route.route_id} ;;
-  }
-
-  join: client_preference {
+  join: client_preference{
     type: left_outer
     relationship: many_to_many
     sql_on: ${cargo.client_id} = ${client_preference.client_id} ;;
+  }
+
+  join: route {
+  type: full_outer
+  relationship: many_to_many
+  sql_on: ${cargo.route_id} = ${route.route_id} ;;
+
   }
 }
