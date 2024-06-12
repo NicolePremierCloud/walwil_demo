@@ -126,7 +126,7 @@ view: cargo {
   dimension: recommended_route {
     type: string
     sql: ${TABLE}.Recommended_Route ;;
-    drill_fields: [client_preference.preference, route.distance, route.duration, route.shipping_way, route.cost, route.trip_details]
+    drill_fields: [client_preference.preference, cargo.recommendation_details, route.distance, route.duration, route.shipping_way, route.cost, route.trip_details]
   }
   dimension: route {
     type: string
