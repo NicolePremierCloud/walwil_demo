@@ -164,6 +164,10 @@ view: cargo {
     type: string
     sql: ${TABLE}.vessel_name ;;
   }
+  dimension: recommendation_details {
+    type: string
+    sql: ${TABLE}.Recommendation_details ;;
+  }
 
   dimension: route_id {
     type: string
